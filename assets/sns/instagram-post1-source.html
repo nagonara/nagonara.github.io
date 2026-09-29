@@ -1,0 +1,161 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:ZK;src:url(https://raw.githubusercontent.com/google/fonts/main/ofl/zenkakugothicnew/ZenKakuGothicNew-Bold.ttf);font-weight:700}
+@font-face{font-family:ZK;src:url(https://raw.githubusercontent.com/google/fonts/main/ofl/zenkakugothicnew/ZenKakuGothicNew-Medium.ttf);font-weight:500}
+html,body{margin:0;padding:0;background:#fff}
+.s{width:1080px;height:1350px;position:relative;overflow:hidden;background:#F8F9F6;font-family:ZK,sans-serif;color:#161A17}
+.brand{position:absolute;left:64px;top:52px;font-weight:700;font-size:36px;color:#CF2F36;letter-spacing:.02em}
+.brand small{font-size:22px;color:#5B635D;margin-left:12px;font-weight:500;letter-spacing:0}
+.pg{position:absolute;right:64px;top:60px;font-weight:500;font-size:26px;color:#8A918B}
+.foot{position:absolute;left:52px;bottom:36px;background:#F8F9F6;padding:6px 14px;border-radius:12px;font-weight:500;font-size:24px;color:#5B635D}
+.foot b{border:2px solid #5B635D;border-radius:999px;padding:1px 12px;margin-right:12px;font-weight:700;font-size:20px}
+.red{color:#CF2F36}
+ruby{ruby-position:over} rt{font-size:.2em;font-weight:700;color:#CF2F36;letter-spacing:.1em}
+h1{margin:0;font-weight:700}
+.lead{font-weight:500;color:#3B423D}
+.mei{position:absolute}
+.bub{position:absolute;background:#fff;border:4px solid #161A17;border-radius:28px;padding:18px 26px 20px;font-weight:700;font-size:36px;line-height:1.35}
+.bub.r:before{content:"";position:absolute;right:-34px;top:40px;border:16px solid transparent;border-left:20px solid #161A17}
+.bub.r:after{content:"";position:absolute;right:-24px;top:44px;border:12px solid transparent;border-left:15px solid #fff}
+.bub.l:before{content:"";position:absolute;left:-34px;top:40px;border:16px solid transparent;border-right:20px solid #161A17}
+.bub.l:after{content:"";position:absolute;left:-24px;top:44px;border:12px solid transparent;border-right:15px solid #fff}
+.bub.d:before{content:"";position:absolute;left:60%;bottom:-34px;border:16px solid transparent;border-top:20px solid #161A17}
+.bub.d:after{content:"";position:absolute;left:calc(60% + 4px);bottom:-24px;border:12px solid transparent;border-top:15px solid #fff}
+.lan{display:inline-flex;align-items:center;gap:14px;padding:12px 20px;border-radius:12px;color:#fff;font-weight:700;font-size:34px;white-space:nowrap}
+.lan i{width:50px;height:50px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-style:normal;color:#161A17;font-size:26px}
+.lan small{font-size:20px;margin-left:4px}
+.lan.y{color:#161A17}
+.row{display:flex;align-items:center;gap:26px;margin:0 0 22px}
+.row .t{font-size:32px;font-weight:700;line-height:1.35}
+.row .t span{font-weight:500;color:#3B423D;font-size:26px;display:block}
+.card{background:#fff;border:3px solid #161A17;border-radius:20px;padding:22px 28px;margin-bottom:22px;display:flex;align-items:center;gap:24px}
+.card .bar{width:18px;align-self:stretch;border-radius:9px}
+.card .nm{font-size:40px;font-weight:700}
+.card .dir{font-size:30px;font-weight:500;color:#3B423D}
+.swipe{position:absolute;left:64px;bottom:110px;font-weight:700;font-size:34px;color:#fff;background:#CF2F36;border-radius:999px;padding:12px 30px}
+.step{display:flex;gap:18px;align-items:flex-start;margin-bottom:34px}
+.step .n{flex:none;width:62px;height:62px;border-radius:50%;background:#CF2F36;color:#fff;font-weight:700;font-size:36px;display:flex;align-items:center;justify-content:center}
+.step .x{font-size:36px;font-weight:700;line-height:1.35}
+.step .x span{display:block;font-size:26px;font-weight:500;color:#3B423D;margin-top:4px}
+.phone{position:absolute;border:14px solid #161A17;border-radius:56px;overflow:hidden;background:#ECEEEA;box-shadow:0 18px 40px rgba(0,0,0,.18)}
+.phone img{display:block;width:100%}
+.state{display:flex;align-items:center;gap:30px;margin-bottom:40px}
+.state .lab{font-size:40px;font-weight:700}
+.state .lab span{display:block;font-size:30px;font-weight:500;color:#3B423D;margin-top:6px;line-height:1.4}
+.glow{box-shadow:0 0 0 10px rgba(22,148,74,.25),0 0 40px 14px rgba(22,148,74,.45)}
+.off{background:#B9BEB8 !important;color:#EEF0EC !important}
+.off i{background:#DADDD8 !important;color:#9AA09A}
+.cta{position:absolute;left:64px;background:#fff;border:4px solid #161A17;border-radius:26px;padding:28px 34px}
+.note{font-size:24px;color:#5B635D;font-weight:500}
+#s6 .note{background:#F8F9F6;padding:4px 10px;border-radius:10px;left:54px !important}
+</style></head><body>
+
+<!-- 1 表紙 -->
+<section class="s" id="s1">
+  <div class="brand">ナゴナラ！<small>名鉄名古屋駅どこに並ぶ？</small></div><div class="pg">1 / 6</div>
+  <svg style="position:absolute;left:0;top:0" width="1080" height="1350" id="floor1"></svg>
+  <div style="position:absolute;left:64px;top:170px">
+    <div class="lead" style="font-size:36px">名鉄名古屋駅の1番ホーム、</div>
+    <h1 style="font-size:150px;line-height:1.25;margin-top:6px">どこに<ruby class="red">並<rt>なら</rt></ruby>ぶ？</h1>
+    <div class="lead" style="font-size:36px;margin-top:10px">迷わん並び方、まとめたでね。</div>
+  </div>
+  <img class="mei" src="../chara-main.png" style="right:40px;bottom:120px;height:760px">
+  <div class="bub r" style="left:64px;top:700px">メイが<br>教えたるでね！</div>
+  <div class="swipe">めくってね →</div>
+  <div class="foot"><b>非公式</b>nagonara.github.io</div>
+</section>
+
+<!-- 2 なぜ迷う -->
+<section class="s" id="s2">
+  <div class="brand">ナゴナラ！<small>名鉄名古屋駅どこに並ぶ？</small></div><div class="pg">2 / 6</div>
+  <div style="position:absolute;left:64px;right:64px;top:170px">
+    <h1 style="font-size:96px">なんで迷うの？</h1><div style="width:600px">
+    <div class="lead" style="font-size:36px;margin:22px 0 40px;line-height:1.5">1番ホームからは、<b style="color:#161A17">3つの方面</b>の<br>電車が次々に出るから。</div>
+    <div class="card"><div class="bar" style="background:linear-gradient(#16944A 50%,#2A89D4 50%)"></div><div><div class="nm">犬山線</div><div class="dir">岩倉・犬山・新鵜沼 方面</div></div></div>
+    <div class="card"><div class="bar" style="background:linear-gradient(#2743A8 50%,#EDB21C 50%)"></div><div><div class="nm">名古屋本線</div><div class="dir">一宮・岐阜 方面</div></div></div>
+    <div class="card"><div class="bar" style="background:#D22A6F"></div><div><div class="nm">津島線</div><div class="dir">津島・弥富 方面</div></div></div>
+    <div style="font-size:42px;font-weight:700;margin-top:34px;line-height:1.45">しかも、行き先と電車の種類で<br><span class="red">並ぶ場所がちがう！</span></div>
+  </div></div>
+  <img class="mei" src="../chara-main.png" style="right:24px;top:640px;height:520px">
+  <div class="bub d" style="right:40px;top:380px;font-size:30px">ようけ来るもんで、<br>迷って当たり前だがね</div>
+  <div class="foot"><b>非公式</b>nagonara.github.io</div>
+</section>
+
+<!-- 3 答え -->
+<section class="s" id="s3">
+  <div class="brand">ナゴナラ！<small>名鉄名古屋駅どこに並ぶ？</small></div><div class="pg">3 / 6</div>
+  <div style="position:absolute;left:64px;right:64px;top:170px">
+    <h1 style="font-size:84px;line-height:1.35">答えは、天井の<br><ruby class="red">行灯<rt>あんどん</rt></ruby>の<span class="red">色</span>！</h1>
+    <div class="lead" style="font-size:34px;margin:18px 0 44px">床の線も同じ色。自分の色の列に並ぶだけ。</div>
+    <div class="row"><div class="lan" style="background:#16944A">犬山<i></i>可児<small>方面</small></div><div class="t">緑<span>犬山線の 準急・急行・特急・快特</span></div></div>
+    <div class="row"><div class="lan" style="background:#2A89D4">西春<i></i>岩倉<small>方面</small></div><div class="t">水色<span>犬山線の 普通</span></div></div>
+    <div class="row"><div class="lan" style="background:#D22A6F">津島<i></i>弥富<small>方面</small></div><div class="t">紫<span>津島線（全部の種類）</span></div></div>
+    <div class="row"><div class="lan" style="background:#2743A8">一宮<i></i>岐阜<small>方面</small></div><div class="t">濃い青<span>名古屋本線の 準急・急行・特急・快特</span></div></div>
+    <div class="row"><div class="lan y" style="background:#EDB21C">須ケ口<i></i>国府宮<small>方面</small></div><div class="t">黄色<span>名古屋本線の 普通</span></div></div>
+    <div class="note" style="margin-top:26px">※1番ホーム（犬山・岐阜・津島方面）の場合。4番ホーム（豊橋・空港方面）は4色です。</div>
+  </div>
+  <div class="foot"><b>非公式</b>nagonara.github.io</div>
+</section>
+
+<!-- 4 光る番号 -->
+<section class="s" id="s4">
+  <div class="brand">ナゴナラ！<small>名鉄名古屋駅どこに並ぶ？</small></div><div class="pg">4 / 6</div>
+  <div style="position:absolute;left:64px;right:64px;top:170px">
+    <h1 style="font-size:84px;line-height:1.35">光っとる<span class="red">番号</span>の<br>下に並ぶ！</h1>
+    <div class="lead" style="font-size:34px;margin:18px 0 56px;line-height:1.5">行灯の丸の中の数字は、乗る位置の番号。<br>電車が止まる番号だけ光るよ。</div>
+    <div class="state"><div class="lan glow" style="background:#16944A">犬山<i>13</i>可児<small>方面</small></div><div class="lab"><span class="red" style="display:inline;font-size:40px;font-weight:700;color:#CF2F36">点滅</span><span>次に来る電車の列</span></div></div>
+    <div class="state"><div class="lan" style="background:#16944A">犬山<i>13</i>可児<small>方面</small></div><div class="lab">点灯<span>その色の次の電車が止まる</span></div></div>
+    <div class="state"><div class="lan off">犬山<i>13</i>可児<small>方面</small></div><div class="lab">消灯<span>ここには止まらんよ</span></div></div>
+    <div style="font-size:36px;font-weight:700;margin-top:20px;line-height:1.5">電車の両数（2〜8両）で、<br>光る番号の範囲が変わるで注意！</div>
+  </div>
+  <div class="foot"><b>非公式</b>nagonara.github.io</div>
+</section>
+
+<!-- 5 ナゴナラ -->
+<section class="s" id="s5">
+  <div class="brand">ナゴナラ！<small>名鉄名古屋駅どこに並ぶ？</small></div><div class="pg">5 / 6</div>
+  <div style="position:absolute;left:64px;right:64px;top:160px">
+    <h1 style="font-size:78px;line-height:1.3"><span class="red">行き先</span>を入れるだけ。</h1>
+    <div class="lead" style="font-size:32px;margin-top:14px">「ナゴナラ！」なら、ぜんぶ教えてくれるよ。</div>
+  </div>
+  <div class="phone" style="left:64px;top:360px;width:430px;height:860px"><img src="site-inuyama.png"></div>
+  <div style="position:absolute;left:560px;right:56px;top:420px">
+    <div class="step"><div class="n">1</div><div class="x">行き先を入れる<span>ひらがなでもOK</span></div></div>
+    <div class="step"><div class="n">2</div><div class="x">乗る電車と<br>並ぶ色・番号が出る<span>何分後に出るか、何時に着くかも</span></div></div>
+    <div class="step"><div class="n">3</div><div class="x">その行灯の下へ！<span>乗り換えの駅も案内するよ</span></div></div>
+    <div style="margin-top:20px;font-size:28px;font-weight:700;border:3px solid #161A17;border-radius:16px;padding:14px 20px;display:inline-block">日本語 / English 対応</div>
+  </div>
+  <div class="foot"><b>非公式</b>nagonara.github.io</div>
+</section>
+
+<!-- 6 CTA -->
+<section class="s" id="s6">
+  <div class="brand">ナゴナラ！<small>名鉄名古屋駅どこに並ぶ？</small></div><div class="pg">6 / 6</div>
+  <svg style="position:absolute;left:0;top:0" width="1080" height="1350" id="floor6"></svg>
+  <div style="position:absolute;left:64px;right:64px;top:170px">
+    <h1 style="font-size:96px;line-height:1.3"><span class="red">保存</span>して、<br>駅で見返してちょ！</h1>
+  </div>
+  <img class="mei" src="../chara-main.png" style="right:40px;bottom:120px;height:700px">
+  <div class="bub r" style="left:64px;top:520px;font-size:32px">わからんかったら、<br>また聞いてちょ〜！</div>
+  <div class="cta" style="top:780px;width:480px">
+    <div style="font-size:30px;font-weight:500;color:#3B423D">プロフィールのリンクから</div>
+    <div style="font-size:64px;font-weight:700;color:#CF2F36;margin:6px 0 4px">ナゴナラ！</div>
+    <div style="font-size:30px;font-weight:700">nagonara.github.io</div>
+    <div style="font-size:26px;font-weight:500;color:#3B423D;margin-top:16px;line-height:1.5">フォローすると、<br>行き先別の並び方も届くよ</div>
+  </div>
+  <div class="note" style="position:absolute;left:64px;bottom:96px">※非公式の案内です。最終確認は駅の掲示板・放送で。</div>
+  <div class="foot"><b>非公式</b>nagonara.github.io</div>
+</section>
+
+<script>
+const C=["#16944A","#2A89D4","#D22A6F","#2743A8","#EDB21C"];
+function floor(id, top, cx, spread, alpha){
+  let g=`<rect x="0" y="${top}" width="1080" height="${1350-top}" fill="#E6E9E3"/>`;
+  const xs=[-2,-1,0,1,2].map(k=>cx+k*spread*0.55);
+  xs.forEach((x,i)=>{const bx=cx+(x-cx)*2.1, tw=14, bw=70;
+    g+=`<polygon points="${x-tw/2},${top} ${x+tw/2},${top} ${bx+bw/2},1350 ${bx-bw/2},1350" fill="${C[i]}" opacity="${alpha}"/>`;});
+  document.getElementById(id).innerHTML=g;
+}
+floor('floor1', 930, 760, 180, 0.9);
+floor('floor6', 1010, 780, 170, 0.9);
+</script>
+</body></html>

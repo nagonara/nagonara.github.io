@@ -1,0 +1,16 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+html,body{margin:0}
+.i{width:1080px;height:1080px;position:relative;overflow:hidden;background:#2743A8}
+img{position:absolute;left:50%;transform:translateX(-50%);top:175px;width:790px}
+</style></head><body><div class="i" id="icon">
+<svg width="1080" height="1080" style="position:absolute;left:0;top:0" id="bg"></svg>
+<img src="../chara-main.png" data-note="顔の部分（上から約6割）を切り出して使う">
+</div>
+<script>
+const C=["#16944A","#2A89D4","#D22A6F","#EDB21C","#F8F9F6"];
+let g='';const cx=540;
+[-2,-1,0,1,2].forEach((k,i)=>{const x=cx+k*150, bx=cx+k*330; const col=["#16944A","#2A89D4","#D22A6F","#EDB21C","#16944A"][i];
+ if(i===4) return;
+ g+=`<polygon points="${x-18},0 ${x+18},0 ${bx+60},1080 ${bx-60},1080" fill="${col}" opacity=".9"/>`;});
+document.getElementById('bg').innerHTML=g;
+</script></body></html>
