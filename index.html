@@ -635,7 +635,7 @@
     <h2 id="guide-h">並ぶ場所</h2>
     <figure class="scene">
       <svg viewBox="0 0 380 270" role="img" id="scene-svg" aria-label="ホームで線路のほうを見た図"></svg>
-      <figcaption><span class="scene-mine" id="scene-mine"></span><span class="l-ja">行灯と床の線は同じ色。自分の色の行灯の下に並びます。</span><span class="l-en">The lantern and the floor line have the same color. Line up under the lantern of your color.</span><span id="scene-cap" hidden></span></figcaption>
+      <figcaption><span class="scene-mine" id="scene-mine"></span><span class="l-ja">行灯と床の線は同じ色。行灯は線路の向かい側の天井にあります。自分の色の行灯の正面に並びます。</span><span class="l-en">The lantern and the floor line have the same color. The lanterns hang across the tracks. Line up facing a lantern of your color.</span><span id="scene-cap" hidden></span></figcaption>
     </figure>
     <details class="more guide-more" id="guide-more">
       <summary>ホームでの見方 ①〜④（タップでひらく）</summary>
@@ -705,16 +705,16 @@
       </li>
       <li>
         <div>
-          <h3><span class="l-ja">光っている番号の下に並ぶ</span><span class="l-en">Line up under a lit number</span></h3>
-          <p><span class="l-ja">行灯は、次に来るその色の電車が止まる番号だけ光ります。掲示板に出る前の電車でも光っています。先発の電車の列は点滅します。</span><span class="l-en">A lantern lights only the numbers where the next train of its color will stop, even before that train appears on the board. The line of the next departing train blinks. </span><span id="trio-when"></span></p>
+          <h3><span class="l-ja">光っている番号の正面に並ぶ</span><span class="l-en">Line up facing a lit number</span></h3>
+          <p><span class="l-ja">行灯は、線路をはさんだ向かい側のホームの上にあります（駅の掲示「乗車位置は向かい側ホームの上に表示しています」）。次に来るその色の電車が止まる番号だけ光ります。掲示板に出る前の電車でも光っています。先発の電車の列は点滅します。</span><span class="l-en">The lanterns hang above the platform across the tracks (a station sign says so). A lantern lights only the numbers where the next train of its color will stop, even before that train appears on the board. The line of the next departing train blinks. </span><span id="trio-when"></span></p>
         </div>
         <div class="demo trio" id="lamp-trio"></div>
       </li>
       <li>
         <div>
           <h3><span class="l-ja">両数で止まる番号が決まっている</span><span class="l-en">The stopping numbers depend on the number of cars</span></h3>
-          <p class="l-ja">行灯の丸の中の番号は、電車の両数ごとに止まる範囲が決まっています。掲示板で両数を見て、その範囲の行灯の下に並んでください。<b>消灯している番号には電車は止まりません。</b>①は電車の先頭のほう<span data-plat="1">（1番ホームは北側）</span><span data-plat="4" hidden>（4番ホームは金山寄り）</span>です。</p>
-          <p class="l-en">Each train length has a set range of numbers. Check the number of cars on the board and line up under a lantern in that range. <b>Trains do not stop at numbers that are off.</b> ① is the front of the train<span data-plat="1"> (the north end of Platform 1)</span><span data-plat="4" hidden> (the Kanayama end of Platform 4)</span>.</p>
+          <p class="l-ja">行灯の丸の中の番号は、電車の両数ごとに止まる範囲が決まっています。掲示板で両数を見て、その範囲の行灯の正面に並んでください。<b>消灯している番号には電車は止まりません。</b>①は電車の先頭のほう<span data-plat="1">（1番ホームは北側）</span><span data-plat="4" hidden>（4番ホームは金山寄り）</span>です。</p>
+          <p class="l-en">Each train length has a set range of numbers. Check the number of cars on the board and line up facing a lantern in that range. <b>Trains do not stop at numbers that are off.</b> ① is the front of the train<span data-plat="1"> (the north end of Platform 1)</span><span data-plat="4" hidden> (the Kanayama end of Platform 4)</span>.</p>
         </div>
         <div class="demo" id="pos-table"></div>
       </li>
@@ -1957,7 +1957,7 @@
     } else {
       h += `<p class="answer-line">${plat} · <b>${ROW_EN[r]} line${pz ? ` ${span(pz.lo, pz.hi)}` : ""}</b></p>`;
       h += `<p class="answer-sub go-line">After the ticket gate, follow the “${CUR} Platform” signs. <a href="#ax-plat" data-jump="ax-plat">Map</a></p>`;
-      if (LAN()[r]) h += `<div class="lantern-row">${lanternHTML(r, lampState === "blink" ? "is-next" : lampState === "dark" ? "is-dark" : "")}<p class="lantern-cap">Look for “${LAN_EN[CUR][r] || ""}”. ${lampState === "blink" ? "<b>Blinking</b>: your line is next." : lampState === "lit" ? "<b>Lit</b>: stand under a lit number." : "<b>Off</b>: no train for a while."}</p></div>`;
+      if (LAN()[r]) h += `<div class="lantern-row">${lanternHTML(r, lampState === "blink" ? "is-next" : lampState === "dark" ? "is-dark" : "")}<p class="lantern-cap">Look for “${LAN_EN[CUR][r] || ""}”. ${lampState === "blink" ? "<b>Blinking</b>: your line is next." : lampState === "lit" ? "<b>Lit</b>: stand facing a lit number." : "<b>Off</b>: no train for a while."}</p></div>`;
     }
     if (allSteps && allSteps.length) h += `<ol class="steps"><li><span class="at">Meitetsu Nagoya</span>　Board the ${esc(typeEn)} for ${esc(destEn)}</li>${allSteps.map((x) => { const a = x.time != null ? x.time : arrAt(t, t.line === "p4" ? NAME4[x.at] : x.at); return `<li><span class="at">${esc(enName(x.at))}</span>${a != null ? ` <span class="at-time">arr. ${fmt(a)}</span>` : ""}${x.enText ? "　" + esc(x.enText) : ""}</li>`; }).join("")}</ol>`;
     const tk = SPM
@@ -2106,7 +2106,7 @@
       const left = t.late ? "定刻を過ぎています" : diff < 1 ? "まもなく発車" : `あと ${Math.floor(diff)}分`;
       const lampState = lamp.blink === r ? "blink" : lamp.lit.includes(r) ? "lit" : "dark";
       const lampCap = lampState === "blink" ? "<b>点滅中</b>　次はこの列の電車"
-        : lampState === "lit" ? "<b>点灯中</b>　光っている番号の下に並ぶ"
+        : lampState === "lit" ? "<b>点灯中</b>　光っている番号の正面に並ぶ"
         : "<b>消灯中</b>　しばらくこの列の電車はありません";
       const ahead = SPM ? ups.slice(0, first.pos - 1) : r === "unknown" ? [] : ups.slice(0, first.pos - 1).filter((x) => rowOf(x) === r);
       const skip = ahead.length
@@ -2164,8 +2164,8 @@
         : CUR === 4
         ? `<p class="answer-sub">4番ホームは1番ホームとは別のホームです。</p>${routeHTML(4)}` : routeHTML(1);
       const pz = SPM || r === "unknown" ? null : posFor(t, r);
-      const posLine = pz ? `<p class="answer-pos">番号 <b>${span(pz.lo, pz.hi)}</b> の行灯の下なら、何両の電車でも止まります。</p>` : "";
-      const posNote = pz ? `<p class="answer-sub">掲示板で両数を見て、その範囲の行灯の下に並んでください。<b>消灯している番号には止まりません。</b></p>
+      const posLine = pz ? `<p class="answer-pos">番号 <b>${span(pz.lo, pz.hi)}</b> の行灯の正面なら、何両の電車でも止まります。</p>` : "";
+      const posNote = pz ? `<p class="answer-sub">掲示板で両数を見て、その範囲の行灯の正面に並んでください。<b>消灯している番号には止まりません。</b></p>
         <ul class="pos-list">${pz.list.map(([n, a, b]) => `<li><span>${n}両</span><b>${span(a, b)}</b></li>`).join("")}</ul>
         <p class="answer-sub">${pz.sp ? "特別車の2両をのぞいた一般車の範囲です。" : ""}①は電車の先頭のほう（${CUR === 4 ? "4番ホームは金山寄り" : "1番ホームは北側"}）です。駅の柱の「乗車位置」の掲示と同じ内容です。</p>` : "";
       const edge = `線路をはさんだ向かい側のホームのふち（${CUR === 4 ? "4番" : "1番"}ホーム側）に、号車の表示が貼ってあります。`;
@@ -2210,7 +2210,7 @@
             <div id="ax-delay"><h3>遅れているとき</h3><p class="answer-sub">${ctx.tshift
               ? `いまは掲示板を<b>${shiftWord(ctx.tshift)}</b>表示しています。${ctx.tshift < 0 ? "遅れて、定刻を過ぎてもまだ出ていない電車を先発にしています。" : "時刻表ではまだ出ていない電車を、もう出たものとして外しています。"}駅の掲示板と放送もあわせて確かめてください。`
               : `この案内は時刻表どおりに走っているときのものです。<b>遅れているときは、駅の掲示板と放送に従ってください。</b>上の「1本戻す」「1本進める」で、駅の掲示板と同じ並びにそろえられます（遅れて出ていない電車があるときは「1本戻す」）。`} <a href="${OPS_URL}" target="_blank" rel="noopener">名鉄の運行情報</a></p></div>
-            ${posNote ? `<div id="ax-pos"><h3>番号について（${esc(ROW_WORD[r])}）</h3><p class="answer-sub">${span(pz.lo, pz.hi)} の行灯の下なら、何両の電車でも止まります。</p>${posNote}</div>` : ""}
+            ${posNote ? `<div id="ax-pos"><h3>番号について（${esc(ROW_WORD[r])}）</h3><p class="answer-sub">${span(pz.lo, pz.hi)} の行灯の正面なら、何両の電車でも止まります。</p>${posNote}</div>` : ""}
             ${fasterNote || noXfer ? `<div id="ax-why"><h3>なぜこの電車？</h3>${fasterNote}${noXfer ? `<p class="answer-sub">乗り換えなしで行くなら、${fmt(noXfer.t.min)}発 ${esc(TYPE_NAME[noXfer.t.type])} ${esc(destName(noXfer.t))}行きでも同じ時刻に着きます。</p>` : ""}</div>` : ""}
             ${d.caution ? `<div id="ax-caution"><h3>この行き先の注意</h3><p class="caution">${esc(d.caution)}</p></div>` : ""}
             ${xr && xr.legs.length || viaNote ? `<div id="ax-xfer"><h3>乗り換えについて</h3>${viaNote}${xr && xr.legs.length ? `<p class="answer-sub">乗り換えにあける時間は、駅ごとに名鉄の乗換案内に合わせています${d.eng1 ? "（名古屋本線の途中の駅は1分）" : "（例：知立の三河線は5分、太田川は1分）"}。</p>` : ""}</div>` : ""}
@@ -2334,7 +2334,7 @@
     document.querySelectorAll("[data-plat]").forEach((el) => { el.hidden = el.dataset.plat !== String(CUR); });
     const svg = document.getElementById("scene-svg");
     svg.innerHTML = sceneSVG(P);
-    svg.setAttribute("aria-label", EN() ? `Platform ${CUR}, looking toward the tracks. ${P.rows.length} colored lanterns hang from the ceiling, each with a floor line of the same color below it. The lantern of the next train's line blinks, lines with a later train are lit, and lines with no train for a while are off.` : `${CUR}番ホームで線路のほうを見た図。天井に${P.rows.length}色の行灯が並び、それぞれの下の床に同じ色の線が引かれている。次に来る電車の列の行灯が点滅し、その後の電車の列は点灯、しばらく来ない列は消灯する。`);
+    svg.setAttribute("aria-label", EN() ? `Platform ${CUR}, looking toward the tracks. ${P.rows.length} colored lanterns hang from the ceiling across the tracks, and on your platform a floor line of the same color faces each one. The lantern of the next train's line blinks, lines with a later train are lit, and lines with no train for a while are off.` : `${CUR}番ホームで線路のほうを見た図。線路の向かい側の天井に${P.rows.length}色の行灯が並び、手前のホームの床には、それぞれの正面に同じ色の線が引かれている。次に来る電車の列の行灯が点滅し、その後の電車の列は点灯、しばらく来ない列は消灯する。`);
   }
 
   // 図：ホームの様子。行灯と床の線だけ色付き（行灯の数に合わせて並べる）
@@ -2507,8 +2507,8 @@
     const myPos = first && hasMine ? posFor(first.t, myRow) : null;
     renderPosTable(hasMine ? myRow : null, myPos);
     document.getElementById("scene-mine").innerHTML = hasMine && EN()
-      ? `Your line: <b>${esc(ROW_EN[myRow])}</b>${myPos ? ` · under lanterns <b>${span(myPos.lo, myPos.hi)}</b>` : ""}`
-      : hasMine ? `あなたの列：<b>${esc(ROW_WORD[myRow])}</b>${myPos ? `・番号 <b>${span(myPos.lo, myPos.hi)}</b> の行灯の下` : ""}` : "";
+      ? `Your line: <b>${esc(ROW_EN[myRow])}</b>${myPos ? ` · facing lanterns <b>${span(myPos.lo, myPos.hi)}</b>` : ""}`
+      : hasMine ? `あなたの列：<b>${esc(ROW_WORD[myRow])}</b>${myPos ? `・番号 <b>${span(myPos.lo, myPos.hi)}</b> の行灯の正面` : ""}` : "";
     // ③床の線の印は、自分の列と人のいない列に置く
     const mk3Row = P.mk3.find((r) => r !== myRow);
     document.getElementById("il-mk3").setAttribute("transform", `translate(${X[mk3Row]} 0)`);
@@ -2802,7 +2802,7 @@
   /* ---------- 「違った」の報告 ----------
      送り先：Googleフォーム（作者が用意したもの）。フォームの「事前入力したURL」を FORM_PREFILL に入れると、
      報告文を入れた状態でフォームが開く。未設定のあいだは、コピーとClaudeのコメントだけ出す。 */
-  const PAGE_VERSION = "v47";
+  const PAGE_VERSION = "v48";
   const FORM_PREFILL = "https://docs.google.com/forms/d/e/1FAIpQLSd0F738jUDUZNJk5hqgPAHA2U0Yje7TYQxEzu9oXzCTMK5Ffg/viewform?usp=pp_url&entry.1750802775=__TEXT__";
   let lastShown = null;
   let moreOpen = false; // 「くわしい案内」を開いているか（15秒ごとの書き直しでも閉じないように）
