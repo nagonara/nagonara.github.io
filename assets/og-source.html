@@ -1,0 +1,70 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:ZK;src:url(https://raw.githubusercontent.com/google/fonts/main/ofl/zenkakugothicnew/ZenKakuGothicNew-Bold.ttf);font-weight:700}
+@font-face{font-family:ZK;src:url(https://raw.githubusercontent.com/google/fonts/main/ofl/zenkakugothicnew/ZenKakuGothicNew-Medium.ttf);font-weight:500}
+html,body{margin:0;padding:0}
+body{width:1200px;height:630px;overflow:hidden;background:#F8F9F6;font-family:ZK,sans-serif;color:#161A17;position:relative}
+.txt{position:absolute;left:64px;top:0;height:630px;width:530px;display:flex;flex-direction:column;justify-content:center}
+.pill{align-self:flex-start;font-weight:700;font-size:20px;letter-spacing:.08em;border:2.5px solid #161A17;border-radius:999px;padding:3px 16px 4px;margin-bottom:22px}
+h1{margin:0;font-size:94px;line-height:1;font-weight:700;color:#CF2F36;letter-spacing:0;white-space:nowrap}
+h2{margin:18px 0 0;font-size:52px;line-height:1.42;font-weight:700}
+p{margin:22px 0 0;font-size:25px;line-height:1.55;font-weight:500;color:#3B423D}
+.url{margin-top:30px;display:flex;align-items:center;gap:14px;font-size:24px;font-weight:700}
+.url span{font-size:17px;font-weight:500;border:1.5px solid #8A918B;border-radius:6px;padding:2px 9px;color:#3B423D}
+svg{position:absolute;right:0;top:0}
+.hl{color:#CF2F36}
+.bub{position:absolute;left:930px;top:300px;background:#fff;border:3px solid #161A17;border-radius:22px;padding:12px 20px 14px;font-weight:700;font-size:27px;line-height:1.3;color:#161A17}
+.bub:before{content:"";position:absolute;left:-26px;top:30px;border:13px solid transparent;border-right:16px solid #161A17}
+.bub:after{content:"";position:absolute;left:-19px;top:33px;border:10px solid transparent;border-right:13px solid #fff}
+
+ruby{ruby-position:over}
+rt{font-size:21px;font-weight:700;color:#CF2F36;letter-spacing:.12em}
+
+</style></head><body>
+<div class="txt">
+  <div class="pill">非公式</div>
+  <h1>ナゴナラ！</h1>
+  <h2>名鉄<ruby class="hl">名古<rt>なご</rt></ruby>屋駅、<br>どこに<ruby class="hl">並<rt>なら</rt></ruby>ぶ？</h2>
+  <p>行き先を入れると、乗る電車と<br>並ぶ場所がすぐわかる。</p>
+  <div class="url">nagonara.github.io<span>日本語 / English</span></div>
+</div>
+<svg width="600" height="630" viewBox="0 0 600 630" id="s"></svg>
+<script>
+const C=["#2A89D4","#D22A6F","#16944A","#2743A8","#EDB21C"]; const LIT=2;
+let g='';
+// floor & ceiling
+g+='<rect x="0" y="0" width="600" height="630" fill="#ECEEEA"/>';
+g+='<rect x="0" y="0" width="600" height="30" fill="#2B312D"/>';
+g+='<rect x="0" y="30" width="600" height="6" fill="#161A17" opacity=".25"/>';
+const floorTop=196;
+g+=`<rect x="0" y="${floorTop}" width="600" height="${630-floorTop}" fill="#E2E5DF"/>`;
+g+=`<line x1="0" y1="${floorTop}" x2="600" y2="${floorTop}" stroke="#161A17" stroke-width="2" opacity=".35"/>`;
+const cx0=300, xs=[76,188,300,412,524];
+const edgeY=560;
+// floor lines in perspective
+xs.forEach((x,i)=>{
+  const tw=16, bw=54, bx=cx0+(x-cx0)*1.28;
+  g+=`<polygon points="${x-tw/2},${floorTop} ${x+tw/2},${floorTop} ${bx+bw/2},${edgeY} ${bx-bw/2},${edgeY}" fill="${C[i]}"/>`;
+});
+// yellow tactile strip + platform edge
+g+=`<rect x="0" y="${edgeY}" width="600" height="34" fill="#EDB21C"/>`;
+for(let x=8;x<600;x+=17){for(let y=edgeY+7;y<edgeY+32;y+=12){g+=`<circle cx="${x}" cy="${y}" r="3.2" fill="#C99512"/>`;}}
+g+=`<rect x="0" y="${edgeY+34}" width="600" height="${630-edgeY-34}" fill="#9AA09A"/>`;
+g+=`<rect x="0" y="${edgeY+34}" width="600" height="5" fill="#161A17" opacity=".3"/>`;
+// lanterns
+xs.forEach((x,i)=>{
+  const w=90,h=62,y=80;
+  g+=`<line x1="${x-24}" y1="36" x2="${x-24}" y2="${y}" stroke="#2B312D" stroke-width="3"/><line x1="${x+24}" y1="36" x2="${x+24}" y2="${y}" stroke="#2B312D" stroke-width="3"/>`;
+  if(i===LIT) g+=`<rect x="${x-w/2-10}" y="${y-10}" width="${w+20}" height="${h+20}" rx="16" fill="${C[i]}" opacity=".22"/>`;
+  g+=`<rect x="${x-w/2}" y="${y}" width="${w}" height="${h}" rx="9" fill="${C[i]}"/>`;
+  g+=`<rect x="${x-w/2}" y="${y+h-12}" width="${w}" height="12" rx="0" fill="#000" opacity=".12"/>`;
+  g+=`<circle cx="${x}" cy="${y+h/2-3}" r="19" fill="${i===LIT?'#FFFFFF':'#F8F9F6'}" stroke="#fff" stroke-width="${i===LIT?4:0}"/>`;
+  if(i===LIT){ // lit: small rays
+    for(let k=0;k<8;k++){const a=k*Math.PI/4+Math.PI/8, r1=64, r2=76; const cxL=x, cyL=y+h/2-3;
+      g+=`<line x1="${cxL+Math.cos(a)*r1}" y1="${cyL+Math.sin(a)*r1*0.8}" x2="${cxL+Math.cos(a)*r2}" y2="${cyL+Math.sin(a)*r2*0.8}" stroke="${C[LIT]}" stroke-width="4" stroke-linecap="round"/>`;}
+  }
+});
+document.getElementById('s').innerHTML=g;
+</script>
+<img src="chara-main.png" style="position:absolute;left:640px;top:150px;height:404px">
+<div class="bub">ここに<br>並んでちょ〜！</div>
+</body></html>
